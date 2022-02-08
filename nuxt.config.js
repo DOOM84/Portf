@@ -39,15 +39,17 @@ export default defineNuxtConfig({
 
     css: ["@/assets/scss/main.scss"],
 
-    /*vite: {
+    vite: {
         css: {
             preprocessorOptions: {
                 scss: {
-                    additionalData: '@import "@/assets/scss/main.scss";',
+                    //additionalData: '@import "@/assets/scss/main.scss";',
+                    charset: false,
                 },
             },
         },
-    },*/
+    },
+
 
     buildModules: [
         '~/modules/errorPage',

@@ -1,16 +1,9 @@
 import * as url from "url";
 import admin from 'firebase-admin';
 
-import * as serviceAccount from "../../helpers/portfolio-86b43-firebase-adminsdk-7ohzi-e4732c6d38.json";
-
 import {
     useCookie
 } from 'h3'
-
-const app = admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
-    databaseURL: "https://portfolio-86b43-default-rtdb.europe-west1.firebasedatabase.app"
-});
 
 export default async (req, res) => {
 

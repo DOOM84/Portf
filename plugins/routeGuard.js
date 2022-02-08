@@ -19,10 +19,6 @@ export default defineNuxtPlugin(async ({ssrContext, $logOut}) => {
 
         const toName = path.split("/");
 
-        //try {
-
-            //token = getCookie(nuxtApp.ssrContext.req.headers.cookie, 'token')
-
             if (toName[1] === 'blog' || toName[1] === 'search') {
 
                 try {
@@ -86,63 +82,6 @@ export default defineNuxtPlugin(async ({ssrContext, $logOut}) => {
                     //console.log(e);
                 }
             }
-
-            /*if (toName[1] === 'admin') {
-
-                //try {
-                if (!token) {
-                    await Promise.reject(Error());
-                }
-
-                const data = await $fetch('/api/user',
-                    {params: {token: token}})
-
-                if (data) {
-                    user.value = {
-                        name: data.login,
-                        level: data.level,
-                    };
-                }
-
-                const {access} = await $fetch('/api/check',
-                    {params: {token: token}})
-
-                if (!access) {
-                    await Promise.reject(Error());
-                }
-            } else {
-
-
-                if (!token) {
-                    await Promise.reject(Error());
-                }
-
-                const data = await $fetch('/api/user',
-                    {params: {token: token}})
-
-                if (data) {
-                    user.value = {
-                        name: data.login,
-                        level: data.level,
-                    };
-                } else {
-                    $logOut();
-                    if (path !== "/") {
-                        res.writeHead(302, {Location: "/"});
-                        res.end();
-                    }
-                }
-            }*/
-        /*} catch (e) {
-            $logOut();
-            if (toName[1] === 'admin') {
-                res.writeHead(302, {Location: "/404"});
-                res.end();
-            } else if (path !== "/" && path !== "/404") {
-                res.writeHead(302, {Location: "/"});
-                res.end();
-            }
-        }*/
     } else if (process.client) {
         router.beforeEach(async (to, from, next) => {
 
